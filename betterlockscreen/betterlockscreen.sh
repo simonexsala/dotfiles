@@ -264,6 +264,7 @@ postlock() {
     # restore default dpms timeout
     if [ "$DEFAULT_DPMS" == "Enabled" ]; then
         xset dpms "$DEFAULT_TIMEOUT"
+        setxkbmap -option compose:caps
     fi
 
     # If dunst already paused before locking don't unpause dunst
