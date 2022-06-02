@@ -11,14 +11,11 @@ A minimal and clutter free setup that couldn't compromise on aesthetics.
 
 
 # Components
-- i3-gaps - Window Manager
-- polybar - Bar
-- alacritty - Terminal Emulator 
-- zsh - Shell
-- lunar vim - Editor
-- picom-jonaburg-git - Compositor
-- dunst - Notifications
-- rofi - Application Launcher
-- betterlockscreen - Lockscreen
-- zathura - PDF Reader
-- feh - Image Viewer
+* [i3-gaps](https://github.com/Airblader/i3) \- Window Manager
+* [polybar](https://github.com/polybar/polybar) \- Bar
+* [lunar vim](https://github.com/LunarVim/LunarVim) \- Editor
+* [picom-jonaburg-git](https://github.com/jonaburg/picom) \- Compositor
+* [dunst](https://github.com/dunst-project/dunst) \- Notifications
+* [rofi](https://github.com/davatorium/rofi) \- Application Launcher
+* [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) \- Lockscreen
+* [zathura](https://github.com/pwmt/zathura) \- PDF Reader
