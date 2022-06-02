@@ -1,7 +1,8 @@
 # dotfiles
 My Linux i3 dotfiles
 
-Minimal and clutter free but without compromising on aesthetics.
+A minimal and clutter free setup that couldn't compromise on aesthetics.
+
 ![rice](https://github.com/simonexsala/dotfiles/blob/main/rice.png)
 
 
@@ -16,4 +17,4 @@ Minimal and clutter free but without compromising on aesthetics.
 - rofi - Application Launcher
 - betterlockscreen - Lockscreen
 - zathura - PDF Reader
-
+- feh - Image Viewer
