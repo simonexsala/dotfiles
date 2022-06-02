@@ -14,7 +14,7 @@ A minimal and clutter free setup that couldn't compromise on aesthetics.
 - alacritty - Terminal Emulator 
 - zsh - Shell
 - lunar vim - Editor
-- picom - Compositor
+- picom-jonaburg-git - Compositor
 - dunst - Notifications
 - rofi - Application Launcher
 - betterlockscreen - Lockscreen
