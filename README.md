@@ -1,2 +1,2 @@
 # dotfiles
-My i3 dotfiles
+My Linux i3 dotfiles
