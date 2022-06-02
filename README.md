@@ -5,6 +5,8 @@ A minimal and clutter free setup that couldn't compromise on aesthetics.
 
 ![rice](https://github.com/simonexsala/dotfiles/blob/main/rice.png)
 
+![flow](https://github.com/simonexsala/dotfiles/blob/main/flow.png)
+
 
 # Components
 - i3-gaps - Window Manager
