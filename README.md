@@ -2,7 +2,7 @@
 My Linux i3 dotfiles
 
 Minimal and clutter free but without compromising on aesthetics.
-![rice](http://url/to/img.png](https://github.com/simonexsala/dotfiles/blob/main/rice.png)
+![rice](https://github.com/simonexsala/dotfiles/blob/main/rice.png)
 
 
 # Components
