@@ -142,7 +142,7 @@ gaps outer 10
 gaps top 31
 
 # Single window writing workspace 
-workspace $ws9 gaps top 130
-workspace $ws9 gaps bottom 130
-workspace $ws9 gaps right 350
-workspace $ws9 gaps left 350
+workspace $ws10 gaps top 130
+workspace $ws10 gaps bottom 130
+workspace $ws10 gaps right 350
+workspace $ws10 gaps left 350
