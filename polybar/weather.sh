@@ -1,4 +1,13 @@
 #!/bin/sh
+night_or_day() {
+    tempTime=$1
+    if [ $tempTime -gt 700 -a $tempTime -lt 2100 ]; then 
+      display+="%{F#eed49f}滛"
+    else
+      display+="%{F#f2d5cf}望"
+    fi
+}
+
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weather/weatherreport"
 curl -sf "wttr.in/Milan?format=%C" > "$weatherreport"
 printf "@" >> "$weatherreport"
@@ -11,10 +20,11 @@ if [ "${temperature:0:1}" == "+" ] ; then
 fi
 
 display=""
+now=$(date +"%k%M")
 
 case $weather in
-  *Sun* | *sun*)
-    display+="%{F#eed49f}滛"
+  *Sun* | *sun* | *Clear* | *clear*)
+    night_or_day $now
     ;;
   *Rain* | *rain* | *showers* | *Sleet* | *sleet*)
     display+="%{F#04a5e5}歹"
