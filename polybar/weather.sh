@@ -1,10 +1,16 @@
 #!/bin/sh
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weather/weatherreport"
 
+is_online() {
+  ping -q -w 1 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && return 0 || return 1
+}
+
 get_forecast() {
-  curl -sf "wttr.in/Milan?format=%C" > "$weatherreport"
-  printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%t" >> "$weatherreport"
+  if [ is_online ] ; then
+    curl -sf "wttr.in/Milan?format=%C" > "$weatherreport"
+    printf "@" >> "$weatherreport"
+    curl -sf "wttr.in/Milan?format=%t" >> "$weatherreport"
+  fi
 }
 
 get_data() {
@@ -59,9 +65,9 @@ night_or_day() {
     fi
 }
 
-if [ "$(stat -c %y "$weatherreport" 2>/dev/null | cut -d' ' -f 2 | cut -d'.' -f 1)" = "$(date -d '20 minutes ago' '+%T')" ] ; then
-  get_forecast
-fi
-
+# if [ "$(stat -c %y "$weatherreport" 2>/dev/null | cut -d' ' -f 2 | cut -d'.' -f 1)" -lt "$(date -d '20 minutes ago' '+%T')" ] ; then
+#  get_forecast
+# fi
+get_forecast
 get_data
 print_weather
