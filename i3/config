@@ -5,7 +5,7 @@ floating_modifier $mod
 font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id redshift -l 45.3644:9.1423
+exec --no-startup-id redshift -l 45:9
 exec --no-startup-id nm-applet --indicator
 
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backend 
