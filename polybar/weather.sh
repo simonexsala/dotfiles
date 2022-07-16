@@ -6,11 +6,11 @@ is_online() {
 }
 
 get_forecast() {
-  if [ is_online ] ; then
+#  if [ is_online ] ; then
     curl -sf "wttr.in/Milan?format=%C" > "$weatherreport"
     printf "@" >> "$weatherreport"
     curl -sf "wttr.in/Milan?format=%t" >> "$weatherreport"
-  fi
+#  fi
 }
 
 get_data() {
@@ -42,7 +42,7 @@ print_weather() {
       display+="%{F#9399b2}敖"
       ;;
     *Cloud* | *cloud*)
-      display+="%{F#04a5e5}摒" 
+      display+="%{F#04a5e5}" 
       ;;
     "Partly cloudy" | Overcast)
       display+="%{F#04a5e5}杖" 
