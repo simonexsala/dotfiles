@@ -16,16 +16,25 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/dev/rust/i3-auto-layout/target/debug/i3-auto-layout
 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $mod+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym $mod+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# Scratchpad
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 900 550
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id alacritty --class="dropdown" -e tmux
+
+bindsym $mod+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Shortcuts
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+z exec --no-startup-id brave
 bindsym $mod+x exec --no-startup-id thunar 
+bindsym $mod+c exec --no-startup-id alacritty -e lf 
+# Scratchpad
+bindsym $mod+s [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -129,20 +138,20 @@ bindsym $mod+i resize shrink width  10 px or 10 ppt
 bindsym $mod+p resize shrink height 10 px or 10 ppt
 
 ## class                 border  backgr. text    indicator child_border
-client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF 
-client.focused_inactive #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF 
-client.unfocused        #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF 
-client.placeholder      #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF 
+client.focused          #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
+client.focused_inactive #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #FFFFFF 
+client.unfocused        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
+client.placeholder        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
 
-client.background       #FFFFFF 
+client.background       #1e1e2e 
 
 for_window [class="^.*"] border pixel 0
-gaps inner 20 
-gaps outer 7 
-gaps top 27 
+gaps inner 20
+gaps outer 0
+gaps top 32
 
 # Single window writing workspace 
 workspace $ws10 gaps top 130
 workspace $ws10 gaps bottom 130
-workspace $ws10 gaps right 350
-workspace $ws10 gaps left 350
+workspace $ws10 gaps right 600
+workspace $ws10 gaps left 600
