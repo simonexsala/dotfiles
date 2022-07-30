@@ -1,114 +1,137 @@
 configuration {
-  modi:			"window,drun,filebrowser";
-  sidebar-mode:		true;
-  show-icons:		false;
-  sort:			true;
-  sorting-method:	"normal";
-  disable-history:	false;
-  scroll-method:	0;
-  drun-display-format:	"{name}";
-  matching:		"fuzzy";
-  window-thumbnail:	true;
-  display-drun:		"Apps";
-  display-window:	"Windows";
-  display-filebrowser:	"Files";
+  modi: "drun,window,keys,filebrowser,run,combi";
 
-filebrowser {
-  directories-first:	true;
-  sorting-method:	"name";
+  font: "JetBrains Mono 14";
+  drun-display-format: " {name} ";
+  sidebar-mode: true;
+  matching: "fuzzy";
+  scroll-method: 0;
+  disable-history: false;
+
+  display-drun: "  Menu";
+  display-run: "  Run";
+  display-window: "类   Window";
+  display-windowcd: "   Window+";
+  display-keys: "  Keys";
+  display-filebrowser: "  Browse";
+  display-combi: "  Binds";
+
+  window-thumbnail: true;
+  sort: true;
+  sorting-method: "normal";
+
+  timeout {
+    action: "kb-cancel";
+    delay: 30;
+  }
+
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
   }
 }
 
-@theme "/dev/null"
+@theme"/dev/null"
 
 * {
-  bg:		#181825;
-  fg:		#05E289;
-  bgAlt: #1B1E25;
-  button:		#05E289;
-  background-color:	@bg;
-  text-color:		@fg;
+  bg: #1e1e2e;
+  fg: #81a1c1;
+  button: #a6adc8;
+  background-color: @bg;
+  text-color: @fg;
 }
 
-@import "./Themes/style.rasi"
-
-mainbox { children: [ mode-switcher, inputbar, listview ]; }
+element-text,
+element-icon,
+mode-switcher {
+  background-color: inherit;
+  text-color: inherit;
+}
 
 window {
-  transparency:		"real";
-  width:		650px;
-  border-radius:	15px;
-  height:		500px;
-  border: 12px;
-  border-color: @bg;
-}
-
-inputbar {
-  children:		[ entry ];
-  expand:		false;
-  padding:		5px 10px 5px 10px;
-}
-
-prompt { 
-  enabled: true; 
-  background-color:	@bgAlt;
-  padding:		15px;
-  border-radius:	15px;
+  width: 900px;
+  height: 550px;
+  border: 0px;
+  border-radius: 8px;
+  border-color: #000000;
 }
 
 entry {
-  background-color:	@bgAlt;
-  placeholder:		"Search";
-  expand:		true;
-  padding:		15px;
-  border-radius:	15px;
+  background-color: #181825;
+  placeholder: "Search";
+  placeholder-color: #81a1c1;
+  text-color: #81a1c1;
+  expand: true;
+  padding: 2.0%;
+  border-radius: 50px;
+}
+
+inputbar {
+  children: [entry];
+  background-image: url("bg.png");
+  expand: false;
+  border-radius: 10px 10px 0 0;
+  font: "JetBrains Mono 14";
+  margin: 0 0 20px 0;
+  padding: 100px 20px 20px 310px;
 }
 
 listview {
-  columns:		2;
-  cycle:		true;
-  dynamic:		true;
-  layout:		vertical;
-  scrollbar:		false;
+  columns: 3;
+  lines: 2;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+  padding: 0 15px 0 15px;
+  scrollbar: false;
+}
+
+mainbox {
+  children: [inputbar,listview,mode-switcher];
 }
 
 element {
-  orientation:		vertical;
-  margin:		2px 3px 2px 3px;
-  border-radius:	10px;
-  background-color:	@bgAlt;
+  orientation: vertical;
+  padding: 20px 0 20px 0;
+  font: "JetBrains Mono 14";
+  margin: 5px 5px 5px 5px;
+  border-radius: 12px;
+  background-color: #181825;
 }
 
 element-text {
-  expand:		true;
-  margin:		15px 15px 15px 15px;
-  background-color:	inherit;
-  text-color:		inherit;
+  expand: true;
+  vertical-align: 0.5;
+  margin: 0% 1% 0% 1%;
+  font: "JetBrains Mono 14";
+  background-color: inherit;
+  text-color: inherit;
 }
 
 element selected {
-  background-color:	@fg;
-  text-color:		@bgAlt;
-  border-radius:	10px;
+  background-color: #bac2de;
+  font: "JetBrains Mono 14";
+  text-color: #2e3440;
+  border-radius: 10px;
 }
 
 mode-switcher {
-  spacing:		2px;
-  border-radius:	10px;
-  background-color:	inherit;
-  text-color:		inherit;
-  margin:		10px 50px 10px 50px;
+  spacing: 0;
+  border-radius: 10px;
+  margin: 0 20px 20px 20px;
 }
 
 button {
-  padding:		8px;
-  background-color:	@bgAlt;
-  vertical-align:	0.5; 
-  horizontal-align:	0.5;
+  padding: 15px;
+  margin: 0;
+  font: "JetBrains Mono,Iosevka Nerd Font 14";
+  background-color: #bac2de;
+  text-color: #3b4252;
 }
 
 button selected {
-  padding:		8px;
-  background-color:	@fg;
-  text-color:		@bgAlt;
+  padding: 15px;
+  margin: 0;
+  background-color: #313244;
+  text-color: #81a1c1;
 }
