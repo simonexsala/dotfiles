@@ -20,7 +20,7 @@ exec_always --no-startup-id ~/dev/rust/i3-auto-layout/target/debug/i3-auto-layou
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 900 550
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id alacritty --class="dropdown" -e tmux
+exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchpad.yml --class="dropdown" -e tmux
 
 bindsym $mod+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym $mod+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
