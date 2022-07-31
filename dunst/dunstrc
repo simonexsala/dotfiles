@@ -4,7 +4,7 @@
     follow = mouse
     width = 350
     height = 450
-    offset = 40x72
+    offset = 40x68
     indicate_hidden = yes
     shrink = no
     transparency = 1
@@ -22,7 +22,7 @@
     font = JetBrainsMono 12
     line_height = 0
     markup = full
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s</b>\n<i>%b</i>"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -30,7 +30,7 @@
     ellipsize = middle
 
     ignore_newline = no
-    stack_duplicates = true
+    stack_duplicates = false
     hide_duplicate_count = false
 
     show_indicators = no
@@ -59,7 +59,6 @@
     per_monitor_dpi = false
 
 [shortcuts]
-
     close = ctrl+space
     close_all = ctrl+shift+space
     history = ctrl+grave
@@ -72,13 +71,16 @@ separator_color = "#263640"
     msg_urgency = low
     background = "#313244"
     foreground = "#eff1f5"
+    timeout = 5
 
 [base16_normal]
     msg_urgency = normal
     background = "#313244"
     foreground = "#eff1f5"
+    timeout = 5
 
 [base16_critical]
     msg_urgency = critical
-    background = "#061115"
+    background = "#d20f39"
     foreground = "#eff1f5"
+    timeout = 5
