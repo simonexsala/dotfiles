@@ -14,7 +14,7 @@ A minimal and clutter free setup that couldn't compromise on aesthetics.
 * [i3-gaps](https://github.com/Airblader/i3) \- Window Manager
 * [polybar](https://github.com/polybar/polybar) \- Bar
 * [lunar vim](https://github.com/LunarVim/LunarVim) \- Editor
-* [picom-jonaburg-git](https://github.com/jonaburg/picom) \- Compositor
+* [picom-pijulius-git](https://github.com/pijulius/picom) \- Compositor
 * [dunst](https://github.com/dunst-project/dunst) \- Notifications
 * [rofi](https://github.com/davatorium/rofi) \- Application Launcher
 * [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) \- Lockscreen
