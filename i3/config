@@ -44,10 +44,10 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 
 # change focus
-bindsym $mod+j focus left
+bindsym $mod+h focus left
 bindsym $mod+k focus up
-bindsym $mod+l focus down
-bindsym $mod+semicolon focus right
+bindsym $mod+j focus down
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -56,10 +56,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
+bindsym $mod+Shift+h move left
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move down
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -148,7 +148,7 @@ client.background       #1e1e2e
 for_window [class="^.*"] border pixel 0
 gaps inner 20
 gaps outer 0
-gaps top 32
+gaps top 28
 
 # Single window writing workspace 
 workspace $ws10 gaps top 130
