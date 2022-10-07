@@ -1,5 +1,5 @@
 # dotfiles
-My Linux i3 dotfiles
+Dotfiles for i3
 
 A minimal and clutter free setup that couldn't compromise on aesthetics.
 
