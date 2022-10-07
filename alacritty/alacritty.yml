@@ -1,12 +1,12 @@
 window:
   padding:
-    x: 5
+    x: 8
     y: 5
   class:
     instance: Alacritty
     general: Alacritty
   opacity: 1
-  decorations: full
+  decorations: None
   dimensions:
     columns: 120 
     lines: 40
@@ -17,7 +17,8 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono
+    # family: JetBrains Mono
+    family: RobotoMono
     style: Regular
   italic:
     family: JetBrains Mono
@@ -27,14 +28,15 @@ font:
     style: Bold
   bold_italic:
     family: JetBrains Mono
-    styel: Bold Italic
-  size: 12
-draw_bold_text_with_bright_colors: true
+    style: Bold Italic
+  size: 13
+  use_thin_strokes: false
+  draw_bold_text_with_bright_colors: true
 
 # Catppuccin!
 colors:
   primary:
-    background: '0x1e1e2e'
+    background: '0x11111b'
     foreground: '0xD9E0EE'
 
   cursor:
@@ -70,14 +72,16 @@ colors:
 cursor:
   style:
     shape: Beam
-    blinking: On
+    blinking: Always
+  blink_interval: 900
+  unfocused_hollow: true
+  thickness: 0.15
 
 selection:
   save_to_clipboard: false
 
 shell:
   program: /usr/bin/zsh
-  # program: ~/.config/tmux/start_tmux.sh
 
 hints:
   alphabet: "jfkdls;ahgurieowpq"
