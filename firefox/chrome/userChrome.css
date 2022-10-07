@@ -1,0 +1,201 @@
+/* ------------------------- */
+/* Spacing, Padding, Shadows */
+/* ------------------------- */
+
+/* Tab Padding */
+#tabbrowser-tabs .tabbrowser-tab{
+   --tab-border-radius: 20px;
+   --tab-block-margin: 6px 4px;
+   --tab-min-width: 40px;
+   --tab-label-mask-size: 0.75em;
+   --inline-tab-padding: 10px;}
+ 
+ :root {
+ --tab-min-height: 28px !important;
+ --tab-max-height: 28px !important;
+ }
+
+ .tab-text {
+   font-family: "Roboto Mono";
+ }
+
+ /* Suppress Connecting/Waiting/Reading/Transerring */
+#statuspanel[type="status"] {
+   display: none !important;
+ }
+ /* Suppress Link Destination Overlay */
+ #statuspanel[type="overLink"] {
+   display: none !important;
+ }
+
+ /* Tab Shadows */
+
+ .tabbrowser-tab:is([visuallyselected="true"], 
+ [multiselected])>.tab-stack>.tab-background { 
+ box-shadow: 0px 0px 0px 0px rgba(0,0,0,0) !important;}
+
+.tab-background {
+ background-color: rgb(24, 24, 37); 
+ }
+
+
+ /* Bookmarks Bar Padding */
+
+ #PersonalToolbar {
+   padding: 4px;
+}
+
+
+/* Active Address Bar Dropdown */
+
+:root[lwt-default-theme-in-dark-mode]  #urlbar[breakout][breakout-extend] > #urlbar-background {
+   border-radius: 20px !important;
+   box-shadow: 0px 0px 20px -11px rgba(0,0,0,.2) !important;
+}
+
+#urlbar-results {
+  font-family: "Roboto Mono";
+}
+
+
+/* Focused Address/URL Field */
+
+#urlbar-background { 
+    background-color: rgb(17, 17, 27);
+    outline: none !important; 
+    box-shadow: none !important
+}
+ 
+ /*  -------------  */
+ /* | NavBar Size | */
+ /*  -------------  */
+ 
+ #urlbar-input {
+   font-family: "Roboto Mono" !important;
+   height: 28px !important;
+     text-align: left !important;
+ }
+ 
+ #urlbar{
+   min-height: 28px !important;
+ }
+   #urlbar .search-one-offs:not([hidden]) {
+    display: none !important;
+  }
+ .toolbarbutton-badge {
+   /* min-width: 10px !important; */
+ }
+ 
+ #urlbar-background {
+   border-radius: 20px !important;
+ }
+ 
+ 
+ /*  ---------  */
+ /* | Borders | */
+ /*  ---------  */
+ 
+ .tabbrowser-tab::after {
+    border: 0 !important;
+ }
+
+#titlebar {
+  -moz-box-ordinal-group: 3 !important;
+}
+ .titlebar-spacer[type="pre-tabs"] {
+    border: 0 !important;
+ }
+ #navigator-toolbox {
+    border: 1 !important;
+ }
+ 
+ .titlebar-spacer[type="pre-tabs"] {
+    border: 0 !important;
+ }
+
+ .titlebar-color {
+ background-color: rgb(17, 17, 27); 
+ }
+ 
+ .tabbrowser-tab::after {
+    border: 0 !important;
+ }
+ 
+ #urlbar-background {
+    border: 0 !important;
+ }
+ 
+ #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+     border-top: 0 !important;
+     font-family: "Roboto Mono";
+ }
+
+.urlbarView-url, .search-panel-one-offs-container {
+  font-family: "Roboto Mono";
+}
+
+ /* Active Tab */
+ 
+ :root:not([lwt-default-theme-in-dark-mode]) .tab-background[selected],
+ .tab-background[multiselected="true"] {
+    background: rgb(41, 44, 60) !important;
+ }
+ 
+ :root[lwt-default-theme-in-dark-mode] .tab-background[selected],
+ .tab-background[multiselected="true"] {
+    background: rgb(41, 44, 60) !important;
+ }
+ 
+ 
+ /* Navigation Bar Background */
+ 
+ :root:not([lwt-default-theme-in-dark-mode]) #nav-bar {
+   background-color: rgb(17, 17, 27) !important;
+ }
+
+ :root[lwt-default-theme-in-dark-mode] #nav-bar {
+   background-color: rgb(17, 17, 27) !important;
+ }
+ 
+ /* Inactive Address/Search Field Background */
+ 
+ :root:not([lwt-default-theme-in-dark-mode]) #urlbar-background {
+   background-color: rgb(35, 38, 52) !important;
+ }
+ 
+ :root[lwt-default-theme-in-dark-mode] #urlbar-background {
+    background: rgb(35, 38, 52) !important;
+ }
+
+ 
+ /* Active Address/Search Field Dropdown */
+ 
+ :root:not([lwt-default-theme-in-dark-mode])  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    background: rgb(35, 38, 52) !important;
+ }
+ 
+ :root[lwt-default-theme-in-dark-mode]  #urlbar[breakout][breakout-extend] > #urlbar-background {
+    background: rgb(35, 38, 52) !important;
+ }
+
+ 
+ /* Bookmarks Bar */
+
+ :root:not([lwt-default-theme-in-dark-mode]) #PersonalToolbar {
+    background-color: rgb(48, 52, 70) !important;
+ }
+ 
+ :root[lwt-default-theme-in-dark-mode] #PersonalToolbar {
+    background-color: rgb(48, 52, 70) !important;
+ }
+ 
+ 
+ /* Navigation Bar Separator */
+ 
+ :root[lwt-default-theme-in-dark-mode] #navigator-toolbox {
+   border-color:rgb(35, 38, 52) !important;
+ }
+ 
+ :root:not([lwt-default-theme-in-dark-mode]) #navigator-toolbox {
+   border-color:rgb(35, 38, 52) !important;
+ }
