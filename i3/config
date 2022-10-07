@@ -29,12 +29,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Shortcuts
 bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+z exec --no-startup-id brave
+bindsym $mod+z exec --no-startup-id firefox
 bindsym $mod+x exec --no-startup-id thunar 
-bindsym $mod+c exec --no-startup-id alacritty -e lf 
+bindsym $mod+c exec --no-startup-id brave
 # Scratchpad
 bindsym $mod+s [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-
 
 # kill focused window
 bindsym $mod+Shift+q kill
