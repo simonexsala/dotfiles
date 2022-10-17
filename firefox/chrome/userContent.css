@@ -1,0 +1,12 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url("about:blank") {
+  * {
+    background: url('wall_resize.png');
+    background-color: #11111b;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
