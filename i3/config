@@ -5,7 +5,7 @@ floating_modifier $mod
 font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id redshift -l 45.3644:9.1423
+exec --no-startup-id redshift -l 45.3644:9.1423 -t 6500:4500
 exec --no-startup-id nm-applet --indicator
 
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf 
@@ -14,16 +14,15 @@ exec_always --no-startup-id xrandr --output DP-3 --mode 1920x1080 --pos 0x0 --ro
 exec_always --no-startup-id feh --bg-scale ~/.cache/betterlockscreen/current/wall_resize.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
-exec_always --no-startup-id ~/dev/rust/i3-auto-layout/target/debug/i3-auto-layout
-
+exec_always --no-startup-id i3-autolayout autolayout
 # Scratchpad
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 900 550
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchpad.yml --class="dropdown" -e tmux
 
-bindsym $mod+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym $mod+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+q exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+w exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -38,9 +37,14 @@ bindsym $mod+s [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# rofi
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/launcher.sh 
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
+bindsym $mod+Shift+a exec --no-startup-id ~/.config/rofi/applets/bin/apps.sh
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
+bindsym $mod+Shift+t exec --no-startup-id betterlockscreen -l dim
 
 # change focus
 bindsym $mod+h focus left
