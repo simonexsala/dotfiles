@@ -3,8 +3,9 @@ Dotfiles for my i3 setup, the configs for many components are independent and ca
 
 A minimal and clutter free setup that couldn't compromise on aesthetics.
 
-![desktop](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:33:19.png)
-![termina](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
+![desktop](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:53:45.png)
+![book](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
+![terminal](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
 ![browser](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:34:14.png)
 ![flow](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
 
