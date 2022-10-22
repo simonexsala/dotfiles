@@ -4,6 +4,11 @@ lvim.colorscheme = "catppuccin"
 vim.g.catppuccin_flavour = "mocha"
 lvim.transparent_window = true
 
+vim.opt.smartindent = true
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 --
@@ -72,13 +77,15 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
 lvim.lsp.installer.setup.ensure_installed = {
-    "sumeko_lua",
-    "jsonls",
+  "sumeko_lua",
+  "jsonls",
 }
 
 lvim.plugins = {
   { "catppuccin/nvim" },
-  { "junegunn/goyo.vim" }
+  { "junegunn/goyo.vim" },
+  { "junegunn/limelight.vim" },
+  { "ron89/thesaurus_query.vim" },
 }
 
 vim.api.nvim_create_autocmd("BufEnter", {
