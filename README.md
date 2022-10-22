@@ -1,5 +1,5 @@
 # dotfiles
-Dotfiles for my i3 setup, the configs for many components are independent and can be reused in other enviroments. Polybar integrated with Rofi and scripts.
+Dotfiles for my i3 setup, the configs for many components are independent and can be reused in other enviroments. Compositor with subtle animations and Polybar-Rofi integration.
 
 ![desktop](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:53:45.png)
 ![terminal](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
