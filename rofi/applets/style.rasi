@@ -1,0 +1,142 @@
+configuration {
+  // Single click to activate option
+  me-select-entry:            "MousePrimary";
+  me-accept-entry:            "!MousePrimary";
+  hover-select:               true;
+  show-icons:                 false;
+}
+
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+
+window {
+  transparency:                "real";
+  location:                    north east;
+  anchor:                      north east;
+  fullscreen:                  false;
+  width:                       230px;
+  x-offset:                    -40px;
+  y-offset:                    68px;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px solid;
+  border-radius:               12px;
+  border-color:                @selected;
+  cursor:                      "default";
+  background-color:            @background;
+}
+
+mainbox {
+  enabled:                     true;
+  spacing:                     15px;
+  margin:                      0px;
+  padding:                     30px;
+  background-color:            transparent;
+  children:                    [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+  enabled:                     true;
+  spacing:                     15px;
+  padding:                     0px;
+  border:                      0px;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  children:                    [ "textbox-prompt-colon", "prompt"];
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "";
+  padding:                     12px 16px;
+  border-radius:               12px;
+  background-color:            @urgent;
+  text-color:                  @background;
+  vertical-align:              0.7;
+}
+
+prompt {
+  enabled:                     true;
+  padding:                     12px;
+  border-radius:               12px;
+  background-color:            @active;
+  text-color:                  @background;
+}
+
+message {
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     10px;
+  border:                      0px solid;
+  border-radius:               100%;
+  border-color:                @selected;
+  background-color:            @background-alt;
+  text-color:                  @foreground;
+}
+
+textbox {
+  background-color:            inherit;
+  text-color:                  inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}
+
+listview {
+  enabled:                     true;
+  columns:                     1;
+  lines:                       5;
+  cycle:                       true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  
+  spacing:                     5px;
+  background-color:            transparent;
+  cursor:                      "default";
+}
+
+element {
+  enabled:                     true;
+  padding:                     10px;
+  border:                      0px solid;
+  border-radius:               100%;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  cursor:                      pointer;
+}
+
+element-text {
+  background-color:            transparent;
+  text-color:                  inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+}
+
+element normal.normal,
+element alternate.normal {
+  background-color:            var(background);
+  text-color:                  var(foreground);
+}
+
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+  background-color:            var(urgent);
+  text-color:                  var(background);
+}
+
+element normal.active,
+element alternate.active,
+element selected.urgent {
+  background-color:            var(active);
+  text-color:                  var(background);
+}
+
+element selected.normal {
+  background-color:            var(selected);
+  text-color:                  var(background);
+}

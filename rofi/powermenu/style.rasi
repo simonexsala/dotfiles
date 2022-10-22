@@ -1,0 +1,159 @@
+configuration {
+  // Single click to activate option
+  me-select-entry:            "MousePrimary";
+  me-accept-entry:            "!MousePrimary";
+  show-icons:                 false;
+  hover-select:               true;
+}
+
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+
+window {
+  transparency:                "real";
+  location:                    north east;
+  anchor:                      north east;
+  fullscreen:                  false;
+  width:                       230px;
+  x-offset:                    -40px;
+  y-offset:                    68px;
+
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px;
+  border-radius:               12px;
+  border-color:                @selected;
+  cursor:                      "pointer";
+  background-color:            @background;
+  markup:                      true;
+}
+
+mainbox {
+  enabled:                     true;
+  spacing:                     15px;
+  margin:                      0px;
+  padding:                     30px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            transparent;
+  children:                    [ "inputbar", "message", "listview" ];
+  markup:                      true;
+}
+
+inputbar {
+  enabled:                     true;
+  spacing:                     15px;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  children:                    [ "textbox-prompt-colon", "prompt"];
+  markup:                      true;
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "";
+  padding:                     12px 16px;
+  border-radius:               12px;
+  background-color:            @urgent;
+  text-color:                  @background;
+  vertical-align:              0.7;
+}
+
+prompt {
+  enabled:                     true;
+  padding:                     12px;
+  border-radius:               12px;
+  background-color:            @active;
+  text-color:                  @background;
+}
+
+message {
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     12px;
+  border:                      0px solid;
+  border-radius:               100%;
+  border-color:                @selected;
+  background-color:            @background-alt;
+  text-color:                  @foreground;
+  markup:                      true;
+}
+
+textbox {
+  background-color:            inherit;
+  text-color:                  inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+  placeholder-color:           @foreground;
+  blink:                       true;
+  markup:                      true;
+}
+
+error-message {
+  padding:                     12px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            @background;
+  text-color:                  @foreground;
+}
+
+listview {
+  enabled:                     true;
+  columns:                     1;
+  lines:                       5;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                true;
+  fixed-columns:               true;
+  
+  spacing:                     5px;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  cursor:                      "default";
+  markup:                      true;
+}
+
+element {
+  enabled:                     true;
+  spacing:                     0px;
+  margin:                      0px;
+  padding:                     12px;
+  border:                      0px solid;
+  border-radius:               100%;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  cursor:                      pointer;
+  markup:                      true;
+}
+
+element-text {
+  background-color:            transparent;
+  text-color:                  inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+  markup:                      true;
+}
+
+element selected.normal {
+  background-color:            var(selected);
+  text-color:                  var(background);
+}
