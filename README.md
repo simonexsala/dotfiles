@@ -1,14 +1,12 @@
 # dotfiles
-Dotfiles for i3
+Dotfiles for my i3 setup, the configs for many components are independent and can be reused. Good rofi integration with polybar and its modules. 
 
 A minimal and clutter free setup that couldn't compromise on aesthetics.
 
-![rice](https://github.com/simonexsala/dotfiles/blob/main/screenshots/rice.png)
-
-![flow](https://github.com/simonexsala/dotfiles/blob/main/screenshots/flow.png)
-
-![ping](https://github.com/simonexsala/dotfiles/blob/main/screenshots/ping.png)
-
+![desktop](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:33:19.png)
+![termina](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
+![browser](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:34:14.png)
+![flow](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
 
 # Components
 * [i3-gaps](https://github.com/Airblader/i3) \- Window Manager
