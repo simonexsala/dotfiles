@@ -1,11 +1,9 @@
 # dotfiles
-Dotfiles for my i3 setup, the configs for many components are independent and can be reused. Good rofi integration with polybar and its modules. 
-
-A minimal and clutter free setup that couldn't compromise on aesthetics.
+Dotfiles for my i3 setup, the configs for many components are independent and can be reused in other enviroments. Polybar integrated with Rofi and scripts.
 
 ![desktop](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:53:45.png)
-![book](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
 ![terminal](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
+![book](https://github.com/simonexsala/dotfiles/blob/main/screenshots/.png)
 ![browser](https://github.com/simonexsala/dotfiles/blob/main/screenshots/2022-10-22_16:34:14.png)
 ![flow](https://github.com/simonexsala/dotfiles/blob/main/screenshots/polybar-rofi.gif)
 
