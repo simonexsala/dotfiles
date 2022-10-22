@@ -1,3 +1,5 @@
+set page-padding 1
+set recolor true
 include theme.color
-map <C-i> recolor
 set selection-clipboard clipboard
+set guioptions none
