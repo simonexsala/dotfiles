@@ -47,7 +47,6 @@ $openstack\
 $env_var\
 $crystal\
 $custom\
-$cmd_duration\
 $lua\
 $line_break\
 $jobs\
@@ -55,6 +54,8 @@ $jobs\
 
 scan_timeout = 10
 add_newline = false
+
+right_format = "$cmd_duration $time"
 
 [battery]
 disabled = true
@@ -68,6 +69,12 @@ error_symbol = "[](bright-red bold)"
 
 [cmd_duration]
 show_notifications = false
+format = "[$duration](bold italic #04a5e5)"
+
+[time]
+disabled = false
+format = "[$time](bold dimmed white)"
+time_format = "%T"
 
 [directory]
 truncation_length = 4
@@ -142,5 +149,3 @@ format = " at [$output]($style)"
 
 [hostname]
 disabled = true
-
-continuation_prompt = "▶▶"
