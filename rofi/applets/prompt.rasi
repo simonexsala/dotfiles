@@ -1,0 +1,97 @@
+configuration {
+  // Single click to activate option
+  me-select-entry:            "MousePrimary";
+  me-accept-entry:            "!MousePrimary";
+  hover-select:               true;
+  show-icons:                 false;
+}
+
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
+
+window {
+  transparency:                "real";
+  location:                    north east;
+  anchor:                      north east;
+  fullscreen:                  false;
+  width:                       230px;
+  x-offset:                    -40px;
+  y-offset:                    68px;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px solid;
+  border-radius:               12px;
+  border-color:                @selected;
+  cursor:                      "default";
+  background-color:            @background;
+}
+
+mainbox {
+  enabled:                     true;
+  spacing:                     15px;
+  margin:                      0px;
+  padding:                     30px;
+  background-color:            transparent;
+  children:                    [ "message", "inputbar", "listview" ];
+}
+
+inputbar {
+  enabled:                     true;
+  spacing:                     15px;
+  padding:                     0px;
+  border:                      0px;
+  border-radius:               0px;
+  border-color:                @selected;
+  background-color:            transparent;
+  text-color:                  @foreground;
+  children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "";
+  padding:                     12px 16px;
+  border-radius:               12px;
+  background-color:            @urgent;
+  text-color:                  @background;
+  vertical-align:              0.7;
+}
+
+prompt {
+  enabled:                     false;
+  padding:                     12px;
+  border-radius:               12px;
+  background-color:            @active;
+  text-color:                  @background;
+}
+
+entry {
+  width: 400px;
+  expand: true;
+  enabled: true;
+  placeholder: "Event followed by time";
+  padding: 10px;
+  border-radius:               12px;
+  background-color:            @active;
+  text-color:                  @background;
+  vertical-align:              0.5;
+}
+
+message {
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     10px;
+  border:                      0px solid;
+  border-radius:               100%;
+  border-color:                @selected;
+  background-color:            @background-alt;
+  text-color:                  @foreground;
+}
+
+textbox {
+  background-color:            inherit;
+  text-color:                  inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+}
