@@ -50,7 +50,7 @@ inputbar {
 textbox-prompt-colon {
   enabled:                     true;
   expand:                      false;
-  str:                         "";
+  str:                         "";
   padding:                     12px 16px;
   border-radius:               12px;
   background-color:            @urgent;
@@ -140,3 +140,4 @@ element selected.normal {
   background-color:            var(selected);
   text-color:                  var(background);
 }
+
