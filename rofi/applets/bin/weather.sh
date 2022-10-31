@@ -10,8 +10,8 @@ if [ -z "$1" ]; then
 fi
 
 weather=""
-sunrise="▴ Sunrise "
-sunset="▾ Sunset "
+sunrise=" Sunrise "
+sunset=" Sunset "
 humidity=" Humidity "
 moon_day=" Day "
 
