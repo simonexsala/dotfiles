@@ -5,6 +5,7 @@ theme="~/.config/rofi/applets/style.rasi"
 turn_on=" Turn on"
 turn_off=" Turn off"
 disconnect=" Disconnect"
+urgent="-u 0"
 
 x_coord="-40px" 
 if [ -z "$1" ]; then
@@ -32,6 +33,7 @@ rofi_cmd_on() {
 		-p "Network" \
 		-mesg "$1" \
 		-markup-rows \
+    -urgent ${urgent} \
 		-theme ${theme}
 }
 
@@ -51,15 +53,15 @@ run_rofi() {
       # bps=$(iwlist wlp2s0 bitrate | grep = | cut -d "=" -f 2)
       bps=$(cat /proc/net/dev | grep wlp2s0 | awk '{print$3}')
       let "temp = $(( bps / 100024))"
-      down="▾  Down $temp MB/s"
+      down="  Down $temp MB/s"
 
       bps=$(cat /proc/net/dev | grep wlp2s0 | awk '{print$11}')
       let "temp = $(( bps / 1024))"
-      up="▴  Up $temp KB/s"
+      up="  Up $temp KB/s"
 
       bps=$(iwconfig wlp2s0 | grep "Link Quality" | cut -d '=' -f 2 -s | cut -d ' ' -f 1 | cut -d '/' -f 1)
       let "temp = $(( bps * 100 / 70 ))"
-      strength="▸  Strength $temp%"
+      strength="  Strength $temp%"
 
       chosen_option=$(echo -e "$turn_off\n$up\n$down\n$strength\n$disconnect" | rofi_cmd_on "$mesg")
       toggle_option "$chosen_option"
@@ -69,6 +71,18 @@ run_rofi() {
     chosen_option=$(echo -e "$turn_on" | rofi_cmd_inactive "$mesg")
     toggle_option "$chosen_option"
   fi
+}
+
+rofi_password() {
+  rofi -theme-str "window { x-offset: $x_coord; }" \
+		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-theme-str 'entry {placeholder: "Password";}' \
+    -dmenu \
+    -password \
+    -i \
+    -no-fixed-num-lines \
+    -p "Password: " \
+    -theme ~/.config/rofi/applets/prompt.rasi
 }
 
 toggle_option() {
@@ -88,11 +102,10 @@ toggle_option() {
   else
     wifi_password=""
     if [[ "$1" =~ "" ]]; then
-      wifi_password=$(rofi -dmenu -p "Password: " )
+      wifi_password=$(rofi_password)
 		fi
-    $success_mesg="You are now connected to ${1:2}"
 		nmcli device wifi connect ${1:2} password $wifi_password | grep "successfully" \
-      && notify-send "Connection Established" "$success_mesg"
+      && notify-send "Connection established" "You are now connected to ${1:2}"
 	fi
   exit
 }
