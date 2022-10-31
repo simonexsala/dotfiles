@@ -5,8 +5,9 @@ floating_modifier $mod
 font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id redshift -l 45.3644:9.1423 -t 6500:4500
+exec --no-startup-id redshift -l 45.3644:9.1423 -t 6500:4000
 exec --no-startup-id nm-applet --indicator
+exec --no-startup-id unclutter 
 
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf 
 exec_always --no-startup-id setxkbmap -option compose:caps
@@ -20,7 +21,7 @@ exec_always --no-startup-id i3-autolayout autolayout
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 900 550
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchpad.yml --class="dropdown" -e tmux
+exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchpad.yml --class="dropdown,dropdown" --title="Scratchpad" -e tmux
 
 bindsym $mod+q exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym $mod+w exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
@@ -46,9 +47,11 @@ bindsym $mod+Shift+a exec --no-startup-id ~/.config/rofi/applets/bin/apps.sh
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launchers/launcher.sh 
 bindsym $mod+Shift+f exec --no-startup-id ~/.config/rofi/applets/bin/weather.sh keyboard 
+bindsym $mod+Shift+g exec --no-startup-id ~/.config/rofi/applets/bin/keys.sh 
 
-bindsym $mod+Shift+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/rofi/applets/bin/powermenu.sh
 bindsym $mod+Shift+c exec --no-startup-id ~/.config/rofi/applets/bin/crypto.sh keyboard
+bindsym $mod+Shift+v exec --no-startup-id ~/.config/rofi/applets/bin/calendar.sh keyboard
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/rofi/applets/bin/bluetooth.sh keyboard
 
 bindsym $mod+Shift+m exec --no-startup-id betterlockscreen -l dim
@@ -132,13 +135,6 @@ bindsym $mod+u resize grow width 8 px or 5 ppt
 bindsym $mod+o resize grow height 5 px or 5 ppt
 bindsym $mod+i resize shrink width  10 px or 10 ppt
 bindsym $mod+p resize shrink height 10 px or 10 ppt
-
-## class                 border  backgr. text    indicator child_border
-# client.focused          #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
-# client.focused_inactive #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #FFFFFF 
-# client.unfocused        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
-# client.placeholder        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
-# client.background       #1e1e2e 
 
 for_window [class="^.*"] border pixel 0
 gaps inner 20
