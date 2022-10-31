@@ -12,7 +12,7 @@ if [ -z "$1" ]; then
   let "x_coord = $(( $x - 2560 + 230 / 2 ))"
 fi
 
-option_1="B"
+option_1=""
 option_2="E"
 option_3="C" 
 option_4="S" 
