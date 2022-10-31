@@ -2,19 +2,19 @@
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weather/weatherreport"
 
 get_forecast() {
-  curl -sf "wttr.in/Milan?format=%C" > "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%C" > "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%t" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%t" >> "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%l" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%l" >> "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%S" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%S" >> "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%s" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%s" >> "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%M" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%M" >> "$weatherreport"
   printf "@" >> "$weatherreport"
-  curl -sf "wttr.in/Milan?format=%h" >> "$weatherreport"
+  curl -sf "wttr.in/Lissone?format=%h" >> "$weatherreport"
 }
 
 get_data() {
@@ -26,10 +26,10 @@ get_data() {
 }
 
 check_error() {
-  error=$(cat "$weatherreport" | grep "Unknown location")
+  error=$(cat "$weatherreport" | grep Unknown)
 
-  if [[ ! -z "$error" ]]; then
-    > $weatherreport
+  if [ "$error" != "" ]; then
+    echo "" > $weatherreport
   fi
 }
 
@@ -60,6 +60,8 @@ print_weather() {
       ;;
     *)
       display+="%{F#e78284} %{F#eff1f5}N/A"
+      echo "$display"
+      exit 0
       ;;
   esac
 
