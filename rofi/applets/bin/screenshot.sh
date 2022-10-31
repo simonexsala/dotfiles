@@ -23,7 +23,7 @@ run_rofi() {
 
 shotnow () {
   time=$(date +%Y-%m-%d_%H:%M:%S)
-  scrot ~/pictures/screenshots/$time.png -d 1 -q 95 && 
+  scrot ~/pictures/screenshots/$time.png -d 1 -q 100 && 
     notify-send "Screenshot taken!" "Copied to the clipboard and you can find it in your folder."
 
   xclip -selection clipboard -target image/png -i ~/pictures/screenshots/$time.png
@@ -40,7 +40,7 @@ clipboard () {
 
 shot3 () {
   time=$(date +%Y-%m-%d_%H:%M:%S)
-  scrot ~/pictures/screenshots/$time.png -d 5 && 
+  scrot ~/pictures/screenshots/$time.png -d 5 -q 100 && 
     notify-send "Screenshot taken!" "Copied to the clipboard and you can find it in your folder."
 
   xclip -selection clipboard -target image/png -i ~/pictures/screenshots/$time.png
@@ -48,7 +48,7 @@ shot3 () {
 
 shotwin () {
   time=$(date +%Y-%m-%d_%H:%M:%S)
-  scrot ~/pictures/screenshots/$time.png -u -b -q 95 && 
+  scrot ~/pictures/screenshots/$time.png -u -b -q 100 && 
     notify-send "Screenshot taken!" "Copied to the clipboard and you can find it in your folder."
 
   xclip -selection clipboard -target image/png -i ~/pictures/screenshots/$time.png
@@ -56,7 +56,7 @@ shotwin () {
 
 shotarea () {
   time=$(date +%Y-%m-%d_%H:%M:%S)
-  scrot ~/pictures/screenshots/$time.png -s && 
+  scrot ~/pictures/screenshots/$time.png -s -q 100 && 
     notify-send "Screenshot taken!" "Copied to the clipboard and you can find it in your folder."
 
   xclip -selection clipboard -target image/png -i ~/pictures/screenshots/$time.png
