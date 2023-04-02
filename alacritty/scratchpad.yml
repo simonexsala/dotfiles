@@ -1,6 +1,6 @@
 window:
   padding:
-    x: 5
+    x: 8
     y: 5
   class:
     instance: Alacritty
@@ -17,16 +17,16 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono
+    family: RobotoMono
     style: Regular
   italic:
-    family: JetBrains Mono
+    family: RobotoMono
     style: Italic
   bold:
-    family: JetBrains Mono
+    family: RobotoMono
     style: Bold
   bold_italic:
-    family: JetBrains Mono
+    family: RobotoMono
     styel: Bold Italic
   size: 13
 draw_bold_text_with_bright_colors: true
@@ -35,7 +35,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   primary:
     background: '0x181825'
-    foreground: '0xD9E0EE'
+    foreground: '0xEFF1F5'
 
   cursor:
     text: '0x1E1D2F'
