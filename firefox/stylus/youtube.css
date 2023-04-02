@@ -1,0 +1,48 @@
+/* ==UserStyle==
+@name           youtube.com - 10/23/2022, 1:02:31 AM
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+  * {
+    font-family: RobotoMono;
+    font-weight: bold;
+    font-size: 14px;
+  }
+ 
+  .ytd-comment-renderer#content-text {
+    font-family: RobotoMono;
+    font-size: 13px;
+  }  
+  
+  .yt-formatted-string {
+    font-family: RobotoMono;
+    font-weight: normal;
+    font-size: 13px;
+  }  
+  
+  .ytd-compact-video-renderer#video-title {
+    font-family: RobotoMono;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  
+  .ytd-watch-metadata {
+    font-size: 20px;
+  }
+  
+  .ytd-searchbox#container {
+    font-family: RobotoMono;
+    font-weight: bold;
+    font-size: 13px;
+  } 
+  
+  .ytd-rich-grid-media#video-title {
+    font-family: RobotoMono;
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
