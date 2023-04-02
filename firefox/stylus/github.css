@@ -1,0 +1,1407 @@
+/* ==UserStyle==
+@name           githubAtomico
+@namespace      githubAtomico
+@version        1.0.0
+@description    Dark style for Github via shevernitskiy's githubDarkcobalt
+@author         blakeperdue
+==/UserStyle== */
+
+@-moz-document url-prefix("https://github.com/")
+{
+  :root {
+    --bg-light: #1C1A24;
+    --bg-dark: #11111b;
+    --bg-medium: #0F0D18;
+    --bg-light-extra: #1C1A24;
+    --text: #eff1f5;
+    --border-light: #1C1A24;
+    --text-primary: #7385ab;
+    --text-secondary: rgba(236, 237, 246, 0.7);
+    --text-disabled: #6375bb;
+    --violet: #D600FF;
+    --violet-dark: #5b40f5;
+    --red-dark: #FF0099;
+    --floating-bar-bg: rgba(55, 58, 82, 0.9);
+    --red: #FF0099;
+    --green: #36f213;
+    --blue: #2592ff;
+    --yellow: #d8ff00;
+    --bg-2: #1C1A24;
+    --bg-2-line: #03000C;
+    --text-2-caret: #7385ab;
+    --text-2: #7385ab;
+    --selection: #36f213;
+    --selection-border: #36f213;
+    --find-highlight: #ffaa3a;
+    --yellow-dark: #d8ff00;
+    --grey-dark: #7385ab;
+    --violet-light: #7930ff;
+    --pink: #f92672;
+    --blue-light: #1bb4f0;
+    --green-light: #a6e22e;
+    --orange: #ffaa3a;
+    --grey: #7385ab;
+    --none: #0000;
+
+    --f1: 'Roboto Mono';
+    --f2: 'JetBrains Mono';
+  }
+
+  :root {
+    --color-canvas-default: var(--bg-medium) !important;
+    --color-page-header-bg: var(--bg-dark) !important;
+    --color-canvas-subtle: var(--bg-dark) !important;
+    --color-header-bg: var(--bg-dark) !important;
+    --color-neutral-muted: var(--bg-light-extra) !important;
+    --color-btn-counter-bg: var(--bg-medium) !important;
+    --color-primer-border-active: var(--violet) !important;
+    --color-timeline-badge-bg: var(--violet) !important;
+    --color-btn-outline-disabled-bg: var(--bg-dark) !important;
+    --color-btn-bg: var(--bg-light-extra) !important;
+    --color-canvas-inset: var(--bg-light) !important;
+    --color-header-search-bg: var(--bg-light) !important;
+    --color-canvas-overlay: var(--bg-light) !important;
+    --color-fg-default: var(--text) !important;
+    --color-danger-fg: var(--red) !important;
+    --color-shadow-medium: 0 2px 4px var(--bg-dark) !important;
+    --color-border-default: var(--border-light) !important;
+    --color-border-muted: var(--border-light) !important;
+  }
+
+  body {
+    font-family: var(--f1);
+  }
+
+  .subnav-item {
+    background-color: var(--bg-light-extra) !important;
+  }
+
+  .TimelineItem-badge {
+    color: var(--text) !important;
+  }
+
+  .TimelineItem::before {
+    background-color: var(--bg-light-extra) !important;
+  }
+
+  .markdown-body code,
+  .markdown-body tt {
+    background-color: var(--bg-dark) !important;
+    font-family: var(--f2) !important;
+    font-size: 15px !important;
+  }
+
+  .branch-name,
+  .commit-ref {
+    font: 15px var(--f2);
+  }
+
+  [aria-label='Issues'] .h4 {
+    font-weight: 500 !important;
+  }
+
+  tt,
+  code,
+  samp {
+    font-family: var(--f2);
+  }
+
+  .text-mono {
+    font-family: var(--f2) !important;
+  }
+
+  .text-small {
+    font-size: 13px !important;
+  }
+
+  .CheckRun {
+    background-color: var(--bg-dark);
+  }
+
+  .CheckRun-header {
+    background-color: var(--bg-dark);
+  }
+
+  .CheckStep[open] .CheckStep-header,
+  .CheckStep-header:hover {
+    box-shadow: none;
+    background-color: var(--bg-light);
+  }
+
+  #files .file .data pre,
+  #files .file .line-data,
+  #files .file .line-number,
+  #readme div.plain pre {
+    font-family: var(--f2), monospace !important;
+    font-variant-ligatures: contextual !important;
+    font-size: 15px;
+  }
+
+  .blob-wrapper,
+  .highlight,
+  .blob-code,
+  .blob-code-inner,
+  pre {
+    font-family: var(--f2), monospace !important;
+    font-variant-ligatures: contextual !important;
+    font-size: 15px !important;
+  }
+
+  /* ---------------------------------- Fonts --------------------------------- */
+
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw6nSHrV.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwenSHrV.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwCnSHrV.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwynSHrV.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-Cw2nSHrV.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbX2o-flEEny0FZhsfKu5WU4xD-CwOnSA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD2OwG_TA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD_OwG_TA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD4OwG_TA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD0OwG_TA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD1OwG_TA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/jetbrainsmono/v12/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhiD5IwU.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqjyD5IwU.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiCD5IwU.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhCD5IwU.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqhSD5IwU.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/commissioner/v11/tDbL2o2WnlgI0FNDgduEk4jqiyD5.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+}
