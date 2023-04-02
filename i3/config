@@ -136,6 +136,13 @@ bindsym $mod+o resize grow height 5 px or 5 ppt
 bindsym $mod+i resize shrink width  10 px or 10 ppt
 bindsym $mod+p resize shrink height 10 px or 10 ppt
 
+## class                 border  backgr. text    indicator child_border
+# client.focused          #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
+# client.focused_inactive #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #FFFFFF 
+# client.unfocused        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
+# client.placeholder        #1e1e2e #1e1e2e #FFFFFF #FFFFFF   #1e1e2e
+# client.background       #1e1e2e 
+
 for_window [class="^.*"] border pixel 0
 gaps inner 20
 gaps outer 0
